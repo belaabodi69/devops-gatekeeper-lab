@@ -27,7 +27,7 @@ jobs:
           docker build -t ${{ secrets.ACR_LOGIN_SERVER }}/vulnerable-app:${{ github.sha }} .
 
       - name: Run Trivy Security Scan
-        uses: aquasecurity/trivy-action@0.28.0
+        uses: aquasecurity/trivy-action@0.20.0
         with:
           image-ref: '${{ secrets.ACR_LOGIN_SERVER }}/vulnerable-app:${{ github.sha }}'
           format: 'table'
